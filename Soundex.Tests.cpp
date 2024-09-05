@@ -66,14 +66,14 @@ TEST(SoundexTest, HandlesLongNames) {
  
 // Test cases for the names with hyphens or spaces
 TEST(SoundexTest, HandlesHyphensAndSpaces) {
-    EXPECT_EQ(generateSoundex("Rohit-Sharma"), "R362");
-    EXPECT_EQ(generateSoundex("Hrithik-Roshan"), "D526");
-    EXPECT_EQ(generateSoundex("Sachin Tendulkar"), "V632");
-    EXPECT_EQ(generateSoundex("Rajkumar Rao"), "A531");
+    EXPECT_EQ(generateSoundex("Ruturaj-Gaikwad"), "R362");
+    EXPECT_EQ(generateSoundex("Dinesh-Karthik"), "D526");
+    EXPECT_EQ(generateSoundex("Virat Kohli"), "V632");
+    EXPECT_EQ(generateSoundex("Amithab Bachhan"), "A531");
 }
  
 // Test cases for the names with non-alphabetic characters
 TEST(SoundexTest, HandlesNonAlphabeticCharacters) {
-    EXPECT_EQ(generateSoundex("J'Sharma"), "J156");
+    EXPECT_EQ(generateSoundex("J'Bumrah"), "J156");
     EXPECT_EQ(generateSoundex("Harish@15"), "H620");
 }
