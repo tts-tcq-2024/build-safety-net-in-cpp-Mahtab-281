@@ -14,8 +14,14 @@ TEST(SoundexTest, HandlesSingleCharacter) {
 
 TEST(SoundexTest, HandlesIgnoredCharacters) {
     std::vector<std::pair<std::string, std::string>> testCases = {
-        {"AEIOU", "A000"}, {"HW", "H000"}, {"YHW", "Y000"}, {"XHW", "X200"}
+        {"AEIOU", "A000"},  
+        {"HW", "H000"},     
+        {"HWY", "H000"},    
+        {"BHWX", "B200"},    
+        {"SAHWEX", "S200"},  
+        {"CEGIKMOQSU", "C200"} 
     };
+
     for (const auto& testCase : testCases) {
         EXPECT_EQ(generateSoundex(testCase.first), testCase.second);
     }
